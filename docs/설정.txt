@@ -1,0 +1,56 @@
+1. Maven Project 생성
+2. POM 설정
+3. web.xml 설정
+
+   Controller <- Service <- Repository <- sqlSession
+
+4. AppConfig 설정
+      |---- DBConfig         :  DataSource
+      |                               jdbc.properties  
+      |---- MyBatisConfig  :  SqlSession, SqlSessionFactory
+
+5. WebConfig 설정
+      |---- MVCConfig : ViewResolver,  DefaultServletHandler, Message Converter
+      |---- SecurityConfig : Interceptor, ArgumentResolver
+      |---- MessageConfig : Message Source
+      |                              message_ko.properties
+      |---- FileUploadConfig : MutipartResolver, Resources
+                                       multipart.propeties
+6. GlobalExceptionHandler
+
+7. slf4j, Logback
+
+
+WEB-INF
+	|----- /classes  <- [ src/main/java, src/main/resources ]
+    		|----- /com
+					|------ /douzone(example)
+							   |------- /config
+										   |------- /app
+										   |		  |------ DBConfig.class
+										   |          |------ MyBatisConfig.class
+										   |          |------ /mybastis
+										   |          |           |----- configuration.xml 
+										   |          |           |----- /mappers
+										   |          |           |----- user.xml
+										   |          |------ /properties
+										   |                      |----- jdbc.properties
+										   |------ /web
+										   |         |---- MVCConfig.class 
+										   |         |---- SecurityConfig.class 
+										   |         |---- MessagesConfig.class 
+										   |         |---- /messages
+										   |         |          |------ messages_ko.properties   
+										   |         |---- /properties
+										   |					|----- multipart.properties   
+
+
+
+
+[Multi Module]
+spring-study
+   |---- spring-study-container
+   |---- spring-study-springex
+   |---- spring-study-springex2
+   |---- spring-study-mysite3
+   |---- spring-study-mysite4
